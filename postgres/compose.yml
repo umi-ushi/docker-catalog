@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:17.2
+    container_name: "postgres_17_2"
+    command: -c 'config_file=/etc/postgresql/postgresql.conf'
+    restart: always
+    volumes:
+      - ./postgres-logs:/var/log/postgresql
+      - ./postgresql.conf:/etc/postgresql/postgresql.conf
+    environment:
+      - POSTGRES_DB=dev
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8081:8080"
