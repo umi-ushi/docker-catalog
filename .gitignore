@@ -1,1 +1,4 @@
 .idea
+
+postgres/postgres-logs
+postgres/pgbadger
