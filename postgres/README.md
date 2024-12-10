@@ -31,3 +31,20 @@ cat ./postgres-logs/*.log | docker run -i --rm matsuu/pgbadger - -o - -x html > 
 Top → Slowest individual queries
 
 ![img.png](img.png)
+
+### pg_stats_statementモジュールで調査
+
+[インストール](./scripts/init/init.sql)
+
+遅いクエリの検索クエリ例
+```sql
+SELECT * FROM pg_stat_statements order by total_exec_time desc limit 10;
+```
+
+## Tips
+
+### 拡張機能の確認
+
+```sql
+select * from pg_available_extensions;
+```
