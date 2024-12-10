@@ -7,6 +7,7 @@ services:
     volumes:
       - ./postgres-logs:/var/log/postgresql
       - ./postgresql.conf:/etc/postgresql/postgresql.conf
+      - ./scripts/init:/docker-entrypoint-initdb.d
     environment:
       - POSTGRES_DB=dev
       - POSTGRES_USER=postgres
