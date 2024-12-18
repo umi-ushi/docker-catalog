@@ -1,4 +1,4 @@
-service:
+services:
   app:
     image: openjdk:21
     command: ./gradlew bootRun
