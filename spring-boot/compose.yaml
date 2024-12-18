@@ -1,6 +1,6 @@
 services:
   app:
-    image: openjdk:21
+    image: openjdk:21-jdk-slim
     command: ./gradlew bootRun
     ports:
       - "8080:8080"
