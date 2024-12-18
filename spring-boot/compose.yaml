@@ -1,0 +1,9 @@
+services:
+  app:
+    image: openjdk:21-jdk-slim
+    command: ./gradlew bootRun
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./spring-boot-minimal:/demo
+    working_dir: /demo
